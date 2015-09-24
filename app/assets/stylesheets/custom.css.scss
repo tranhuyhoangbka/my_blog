@@ -1,0 +1,240 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+body{
+    background: image-url("body-bg-new.jpg") repeat top left;
+}
+.container{
+  max-width: 900px;
+}
+.navbar-brand{
+margin: -10px 0px 0px 0px;
+}
+.navbar-brand img{
+    margin-left: 33%;
+}
+.navbar-right{
+margin-right: 150px;
+}
+.navbar-right li a{
+font-weight: bold;
+color: #fff !important;
+}
+.navbar-right li a:hover{
+color: #C6C4C4 !important;
+border-bottom: 2px solid #B7360E;
+}
+
+.top-menu .nav-tabs{
+margin-top: 6px;
+background: #d3e5f4 !important;
+border-bottom: 2px solid #B2D8F7;
+border-radius: 6px;
+border-bottom-right-radius: 0px;
+border-bottom-left-radius: 0px;
+}
+.top-menu .container{
+padding: 0px;
+}
+.nav-tabs .active{
+    background: #E8F2F9 !important;
+}
+.content{
+background: #fff;
+border: 1px solid #d8d8d8;;
+}
+.top-menu .nav li a:hover{
+background: #d3e5f4 !important;
+color: #515050;
+border-bottom: 2px solid #49677F;
+}
+.top-menu .nav li a{
+font-weight: bold;
+}
+#primary{
+margin-top: 28px;
+}
+.category-posts .top-bar > h3:first-child, .top-box-sidebar h3{
+font-size: 15px;
+font-weight: bold;
+background: #F28E3C;
+color: #fff;
+padding: 5px 8px 5px 8px;
+margin:0px;
+}
+.category-posts{
+  margin-bottom: 25px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.category-posts:last-child{
+border-bottom: none;
+}
+.category-posts .top-bar{
+margin-bottom: 15px;
+background: #ededed;
+}
+.category-posts .top-bar h3+h3 a{
+font-size: 13px;
+}
+.category-posts .top-bar h3+h3{
+margin: 0px;
+margin-top: -4px;
+margin-right: 1.5%;
+}
+.post .image-post + h3{
+margin: 0px;
+margin-top: 3px;
+}
+.post .image-post + h3 a{
+font-size: 16px;
+font-weight: bold;
+text-decoration: none;
+}
+.category-posts .post p{
+margin: 0px;
+}
+.post h3 + p{
+color: #888;
+font-size: 13px;
+margin-top: 5px;
+}
+.category-posts .post h3 + p + p{
+font-size: 13px;
+color: #888;
+margin-top: 3px;
+}
+.category-posts .post h3 + p + p a + i{
+  margin-left: 3px;
+}
+.category-posts .post h3 + p + p a{
+text-decoration: none;
+}
+.category-posts .post i{
+font-size: 11px;
+color: #888;
+}
+.post ul.info-post{
+margin-top: 7px;
+}
+.post ul.info-post li{
+display: inline;
+font-size: 13px;
+color: #777;
+margin-right: 3px;
+}
+.post ul.info-post li:first-child{
+border: 2px solid #CECCCA;
+background: #ededed;
+padding: 3px 5px 3px 5px;
+}
+#sidebar{
+margin-top: 30px;
+padding: 0px 6px 0px 6px;
+}
+.box-sidbar{
+margin-bottom: 20px;
+}
+.content-box-side-bar{
+}
+.content-box-side-bar .post{
+margin-left: 10px;
+}
+.content-box-side-bar .post h3{
+margin: 0px;
+}
+.content-box-side-bar .post h3 a{
+font-size: 15px;
+font-weight: bold;
+text-decoration: none;
+}
+
+.top-box-sidebar h3{
+  text-align: center;
+}
+.content-box-side-bar .post p{
+margin: 0px;
+}
+.content-box-side-bar .post p a{
+font-size: 13px;
+text-decoration: none;
+margin-top: 3px;
+}
+.content-box-side-bar .post p:last-child{
+margin-top: 2px;
+}
+.content-box-side-bar .post p i{
+color: #888;
+font-size: 11px;
+}
+#new-posts .post{
+margin-right: 5px;
+margin-bottom: 2px;
+padding-bottom: 10px;
+border-bottom: 1px solid #e1e1e1;
+}
+#new-posts .content-box-side-bar{
+border: 1px solid #ededed;
+}
+#new-posts .post:last-child{
+border-bottom: none;
+}
+#new-album-photo .content-box-side-bar .post{
+margin-left: 0px;
+margin-bottom: 20px;
+padding-bottom: 5px;
+border-bottom: 1px solid #e1e1e1;
+}
+.category-posts .post{
+margin-bottom: 16px;
+}
+.category-posts:last-child{
+margin-bottom: 20px;
+//padding-bottom: 50px;
+}
+
+.footer {
+padding-bottom: 20px;
+padding-top: 13px;
+margin-top: 30px;
+border-top: 2px solid #e1e1e1;
+}
+.footer ul.nav{
+margin-bottom: 8px;
+}
+.footer ul.nav li{
+border-right: 1px solid #CCC9C9;
+}
+.footer ul.nav li a{
+padding-top: 3px;
+padding-bottom: 3px;
+font-weight: bold;
+}
+.footer .col-xs-10{
+padding: 0px;
+}
+.footer ul.nav li:first-child a{
+padding-left: 0px;
+}
+.footer p{
+margin-bottom: 2px;
+color: #494949;
+}
+
+.footer .col-xs-2 i{
+font-size: 24px;
+cursor: pointer;
+}
+.slider-wrap{
+margin-top: 52px;
+}
+.slider-wrap .container{
+padding-left: 0px;
+padding-right: 0px;
+}
+.carousel-inner img{
+    width: 100%;
+    height: 200px !important;
+    box-shadow: 10px 10px 5px #888888;
+}
