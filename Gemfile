@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
+gem "devise"
+gem "rails_admin"
 gem "bootstrap-sass"
+gem "ckeditor"
+gem "paperclip"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use mysql as the database for Active Record

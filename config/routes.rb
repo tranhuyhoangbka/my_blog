@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  resources :posts
+  resources :videos
+  resources :photos
+
+  resources :categories do
+    resources :posts
+  end
   root "pages#home"
   resources :pages, only: :home
 
