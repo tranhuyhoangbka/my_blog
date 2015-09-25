@@ -22,9 +22,7 @@ module RailsAdmin::PostAdmin
 
       show do
         field :title
-        field :content do
-          sanitize
-        end
+        field :content
         field :category
         field :image
       end
