@@ -14,3 +14,10 @@ $(document).ready(function(){
      }
   });
 });
+
+$(document).on("page:load", function(){
+  $(".scroll-top").hide();
+   $(".scroll-top").click(function(){
+    $("html, body").stop().animate({scrollTop:0}, '1000', 'swing');
+  });
+});
