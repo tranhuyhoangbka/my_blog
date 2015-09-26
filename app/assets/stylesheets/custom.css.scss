@@ -15,11 +15,11 @@ margin: -10px 0px 0px 0px;
     height: 44px;
 }
 .navbar-right{
-margin-right: 150px;
+  margin-right: 150px;
   li:last-child a{
-  padding: 0px;
-  margin-top: 6px;
-  padding-right: 12px;
+    padding: 0px;
+    margin-top: 6px;
+    padding-right: 12px;
   }
 }
 .navbar-right li a{
@@ -29,6 +29,11 @@ color: #fff !important;
 .navbar-right li a:hover{
 color: #C6C4C4 !important;
 border-bottom: 2px solid #B7360E;
+}
+
+.navbar-right .dropdown-menu li a {
+  color: #000 !important;
+  text-align: center;
 }
 
 .top-menu .nav-tabs{

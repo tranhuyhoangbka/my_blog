@@ -16,6 +16,15 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Trang chủ</a></li>
         <li><a href="#">Giới thiệu</a></li>
+        <% if user_signed_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Home Admin", rails_admin.dashboard_path %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% end %>
         <li><a href="#"><%= image_tag "anhdong.gif", size: "48", class: "img-responsive funy" %></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
