@@ -3,8 +3,6 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.string :title
       t.text :content
-      t.references :category, index: true, foreign_key: true
-      t.string :image
       t.string :video
       t.integer :type
 

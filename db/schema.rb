@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150925162943) do
+ActiveRecord::Schema.define(version: 20150926062444) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "content",    limit: 255
@@ -19,26 +19,39 @@ ActiveRecord::Schema.define(version: 20150925162943) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "articles", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "content",     limit: 65535
+  create_table "article_categories", force: :cascade do |t|
+    t.integer  "post_id",     limit: 4
     t.integer  "category_id", limit: 4
-    t.string   "image",       limit: 255
-    t.string   "video",       limit: 255
-    t.string   "type",        limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "video_type",  limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
-  add_index "articles", ["category_id"], name: "index_articles_on_category_id", using: :btree
+  add_index "article_categories", ["category_id"], name: "index_article_categories_on_category_id", using: :btree
+  add_index "article_categories", ["post_id"], name: "index_article_categories_on_post_id", using: :btree
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title",              limit: 255
+    t.text     "content",            limit: 65535
+    t.string   "video",              limit: 255
+    t.string   "type",               limit: 255
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.integer  "video_type",         limit: 4
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+  end
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.text     "description", limit: 65535
-    t.string   "image",       limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name",               limit: 255
+    t.text     "description",        limit: 65535
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -87,6 +100,5 @@ ActiveRecord::Schema.define(version: 20150925162943) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "articles", "categories"
   add_foreign_key "images", "articles"
 end

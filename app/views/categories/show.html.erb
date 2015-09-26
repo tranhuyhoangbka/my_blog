@@ -1,0 +1,13 @@
+<div class="category-posts">
+    <div class="top-bar">
+        <h3 class="pull-left"><%= @category.name %></h3>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="posts" id="<%= dom_id @category %>">
+      <%= render partial: "posts/post", collection: @posts %>
+      <%= paginate @posts %>
+    </div>
+</div>
+
+

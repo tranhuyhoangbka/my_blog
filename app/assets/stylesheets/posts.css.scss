@@ -1,0 +1,41 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.posts ul.info-post li{
+display: inline;
+font-size: 13px;
+color: #777;
+margin-right: 3px;
+}
+.posts ul.info-post li:first-child{
+border: 2px solid #CECCCA;
+background: #ededed;
+padding: 3px 5px 3px 5px;
+}
+.posts .post{
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 13px;
+  padding-bottom: 15px;
+
+  h3{
+    margin: 0px 0px 6px 0px;
+    a{
+      font-size: 17px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+  .info-post{
+    margin-top: 15px;
+  }
+}
+.posts .post h3 + p{
+  margin-bottom: 10px;
+  span{
+    margin-right: 6px;
+  }
+}
+.read-more{
+  font-size: 12px;
+  margin: 3px 0px 0px 5px;
+}
