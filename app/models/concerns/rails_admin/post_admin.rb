@@ -31,9 +31,7 @@ module RailsAdmin::PostAdmin
         end
         field :title
         field :content, :ck_editor
-        field :image do
-          thumb_method :thumb
-        end
+        field :image
         field :categories
       end
 
