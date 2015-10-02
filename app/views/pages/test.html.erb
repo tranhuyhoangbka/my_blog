@@ -1,0 +1,33 @@
+<div class="btn-group" style="margin-bottom: 15px;">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Select language <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><%= link_to "Vietnamese", url_for(lang: "vie"), data: {no_turbolink: true} %></li>
+    <li><%= link_to "English", url_for(lang: "en"), data: {no_turbolink: true} %></li>
+  </ul>
+</div>
+<div class="translate">
+  <button class="btn btn-info" id="btn-show-one">Click me!</button>
+</div>
+
+<button type="button" class="btn btn-primary btn-lg modal-show" data-toggle="modal" data-target="#myModal" style="display: none">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body show-result">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

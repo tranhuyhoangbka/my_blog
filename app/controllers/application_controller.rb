@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_locale
 
   helper_method :all_categories
   protected
@@ -14,5 +15,9 @@ class ApplicationController < ActionController::Base
 
   def all_categories
     @categories = Category.all.order("name")
+  end
+
+  def set_locale
+    I18n.locale = params[:lang] if params[:lang]
   end
 end
