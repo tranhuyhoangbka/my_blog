@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "i18n-js", "3.0.0.rc10"
 gem "devise"
 gem "rails_admin"
 gem "bootstrap-sass"
