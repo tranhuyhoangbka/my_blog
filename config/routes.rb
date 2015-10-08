@@ -13,6 +13,12 @@ Rails.application.routes.draw do
   get "pages/test" => "pages#test", as: :test
   resources :pages
 
+  namespace :api do
+    namespace :v1 do
+      resources :projects
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
