@@ -5,10 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create username: "tranhuyhoang", email: "admin@myblog.com", password: "123456789",
-            password_confirmation: "123456789", photo: "wwwwwwwwwwwwww",
+#User.create username: "tranhuyhoang", email: "admin@myblog.com", password: "123456789",
+            # password_confirmation: "123456789", photo: "wwwwwwwwwwwwww",
+            # introduction: "wwwwwwwwwwwwwwwwwwwwwwwww wwwwwww wwwwwwwww wwwwwwwwww www"
+10.times do |n|
+  User.create username: Faker::Name.name, email: "user#{n}@gmail.com", password: "123456789",
+            password_confirmation: "123456789", photo: "none",
             introduction: "wwwwwwwwwwwwwwwwwwwwwwwww wwwwwww wwwwwwwww wwwwwwwwww www"
-
+end
+20.times {Project.create(name: Faker::Company.name, description: Faker::Lorem.sentence)}
 # 30.times do
 #   Post.create!(title: Faker::Book.title, content: Faker::Lorem.paragraph)
 # end

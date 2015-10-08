@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem "i18n-js", "3.0.0.rc10"
 gem "devise"
+gem 'devise-token_authenticatable'
 gem "rails_admin"
 gem "bootstrap-sass"
 gem "ckeditor"
