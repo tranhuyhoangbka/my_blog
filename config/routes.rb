@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :students
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, skip: [:registrations]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

@@ -1,0 +1,50 @@
+<% if current_page?(action: "new") %>
+  <%= form_for(@student) do |f| %>
+    <% if @student.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+        <ul>
+        <% @student.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :age %><br>
+      <%= f.number_field :age %>
+    </div>
+    <div class="field">
+      <%= f.label :address %><br>
+      <%= f.text_field :address %>
+    </div>
+    <div class="field">
+      <%= f.label :birthday %><br>
+      <%= f.date_select :birthday %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </div>
+    <div class="form-group">
+      <%= f.label :sex %><br>
+      <%= f.select :sex, options_for_select(Student.sexes) %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+<% else %>
+  Name: <%= best_in_place @student, :name, as: :input, place_holder: "click me to add content", ok_button: "Save", cancel_button: "Cancel" %><br>
+  Age: <%= best_in_place @student, :age, as: :input, place_holder: "enter age" , ok_button: "Save", cancel_button: "Cancel" %><br>
+  Address: <%= best_in_place @student, :address, as: :input, place_holder: "enter address", ok_button: "Save", cancel_button: "Cancel" %><br>
+  Birthday: <%= best_in_place @student, :birthday, as: :date %><br>
+  Description: <%= best_in_place @student, :description, as: :textarea, place_holder: "enter description", ok_button: "Save", cancel_button: "Cancel" %><br>
+  Sex: <%= best_in_place @student, :sex, as: :select, collection: Student.sexes, :display_with => lambda { |v| v.to_s == "1" ? "female" : "male" }  %>
+<% end %>

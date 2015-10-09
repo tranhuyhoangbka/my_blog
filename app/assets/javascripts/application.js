@@ -12,9 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require best_in_place
+//= require jquery-ui
+//= require best_in_place.jquery-ui
 //= require turbolinks
 //= require bootstrap
 //= require ckeditor/init
 //= require i18n
 //= require i18n/translations
 //= require_tree .
+//= require_self
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+});
+
