@@ -8,4 +8,7 @@
         <h3><%= @post.title %></h3>
         <%= sanitize @post.content %>
     </div>
+    <div class="share-button">
+      <%= social_share_button_tag @post.title, :popup => "true" %>
+    </div>
 </div>

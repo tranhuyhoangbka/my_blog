@@ -14,6 +14,7 @@ module RailsAdmin::CategoryAdmin
         field :name
         field :description
         field :image
+        field :order_ca
       end
 
       edit do
@@ -24,6 +25,7 @@ module RailsAdmin::CategoryAdmin
         field :description
         field :image
         field :posts
+        field :order_ca
       end
 
       show do

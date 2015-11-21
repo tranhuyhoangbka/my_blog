@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
   end
 
   def all_categories
-    @categories = Category.all.order("name")
+    @categories = Category.all.order("order_ca")
   end
 end
