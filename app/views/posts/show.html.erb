@@ -9,7 +9,7 @@
         <%= sanitize @post.content %>
     </div>
     <div class="share-button">
-      <%= social_share_button_tag @post.title, :popup => "true", 'data-title' => @post.title %>
+      <%= social_share_button_tag @post.title, :popup => "true", :'data-title' => @post.title %>
     </div>
 </div>
 
