@@ -1,4 +1,4 @@
-require "rufus-scheduler"
+#require "rufus-scheduler"
 
 # scheduler = Rufus::Scheduler::singleton
 
