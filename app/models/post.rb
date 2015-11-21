@@ -7,9 +7,9 @@ class Post < Article
   paginates_per 10
 
   has_attached_file :image, :styles => {
-      :thumb => "100x100#",
-      :small  => "150x150>",
-      :medium => "200x200" }
+      :thumb => "140x140#",
+      :small  => "200x200#",
+      :medium => "300x300>" }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   #validates :image, attachment_presence: true
 
