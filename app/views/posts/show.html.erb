@@ -9,6 +9,6 @@
         <%= sanitize @post.content %>
     </div>
     <div class="share-button">
-      <%= social_share_button_tag @post.title, :popup => "true" %>
+      <%= social_share_button_tag @post.title, :popup => "true", 'data-facebook-title' => @post.title %>
     </div>
 </div>
