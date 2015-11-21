@@ -12,3 +12,7 @@
       <%= social_share_button_tag @post.title, :popup => "true", 'data-facebook-title' => @post.title %>
     </div>
 </div>
+
+<div class="comment-face">
+  <div class="fb-comments" data-href="<%= category_post_url(@category, @post) %>" data-numposts="6"></div>
+</div>
