@@ -1,11 +1,14 @@
 class Category < ActiveRecord::Base
   include RailsAdmin::CategoryAdmin
+  extend FriendlyId
 
   validates :name, presence: true, length: {minimum: 6, maximum: 50}
   validates :description, presence: true, length: {minimum: 12}
 
   has_many :article_categories, dependent: :destroy
   has_many :posts, through: :article_categories
+
+  friendly_id :name, use: :slugged
 
   has_attached_file :image,
     :styles => {

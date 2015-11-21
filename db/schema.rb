@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121093510) do
+ActiveRecord::Schema.define(version: 20151121101738) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "content",    limit: 255
@@ -56,7 +56,10 @@ ActiveRecord::Schema.define(version: 20151121093510) do
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
     t.integer  "order_ca",           limit: 4,     default: 0
+    t.string   "slug",               limit: 255
   end
+
+  add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",    limit: 255, null: false
