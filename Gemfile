@@ -8,6 +8,7 @@ gem "paperclip"
 gem 'protected_attributes'
 gem "faker"
 gem 'social-share-button'
+gem 'friendly_id', '~> 5.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use mysql as the database for Active Record

@@ -11,6 +11,6 @@ class PostsController < ApplicationController
   end
 
   def load_post
-    @post = @category.posts.find params[:id]
+    @post = @category.posts.friendly.find params[:id]
   end
 end

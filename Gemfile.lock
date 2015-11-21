@@ -76,6 +76,8 @@ GEM
       i18n (~> 0.5)
     font-awesome-rails (4.4.0.0)
       railties (>= 3.2, < 5.0)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -102,7 +104,7 @@ GEM
     mime-types (2.6.2)
     mimemagic (0.3.0)
     mini_portile (0.6.2)
-    minitest (5.8.1)
+    minitest (5.8.3)
     multi_json (1.11.2)
     mysql2 (0.3.20)
     nested_form (0.3.2)
@@ -228,6 +230,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   faker
+  friendly_id (~> 5.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (~> 0.3.20)

@@ -1,5 +1,5 @@
 <%= div_for post do %>
-  <%= content_tag :h3, link_to(post.title, category_post_path(@category, post)) %>
+  <%= content_tag :h3, link_to(post.title, category_post_path(@category, post), data: {no_turbolink: true}) %>
   <p><span><i class="glyphicon glyphicon-time"></i> <%= post.created_at.strftime "%I:%M %d/%m/%Y" %></span> <span><i class="glyphicon glyphicon-pencil"></i> <%= link_to "Trần Huy Hoàng", "#" %></span></p>
   <div class="row">
     <div class="col-xs-16 col-md-4">
