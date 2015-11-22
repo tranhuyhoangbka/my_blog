@@ -1,0 +1,10 @@
+rss_urls:
+  sport: "http://news.google.com.vn/news?cf=all&hl=vi&pz=1&ned=vi_vn&topic=s&output=rss"
+  relax: "http://news.google.com.vn/news?cf=all&hl=vi&pz=1&ned=vi_vn&topic=e&output=rss"
+  bussiness: "http://news.google.com.vn/news?cf=all&hl=vi&pz=1&ned=vi_vn&topic=b&output=rss"
+  in_country: "http://news.google.com.vn/news?cf=all&hl=vi&pz=1&ned=vi_vn&topic=n&output=rss"
+  out_country: "http://news.google.com.vn/news?cf=all&hl=vi&pz=1&ned=vi_vn&topic=w&output=rss"
+
+except_cate:
+  in_country: "Quốc gia"
+  instead: "Trong nước"

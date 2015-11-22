@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121101738) do
+ActiveRecord::Schema.define(version: 20151122104700) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "content",    limit: 255
@@ -42,8 +42,17 @@ ActiveRecord::Schema.define(version: 20151121101738) do
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
     t.string   "slug",               limit: 255
+    t.string   "category",           limit: 255
+    t.string   "entry_id",           limit: 255
+    t.datetime "published_at"
+    t.text     "link",               limit: 65535
+    t.text     "image_url",          limit: 65535
+    t.string   "author",             limit: 255
+    t.text     "short_content",      limit: 65535
+    t.integer  "post_type",          limit: 4
   end
 
+  add_index "articles", ["entry_id"], name: "index_articles_on_entry_id", unique: true, using: :btree
   add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
 
   create_table "categories", force: :cascade do |t|

@@ -22,6 +22,7 @@ module RailsAdmin::CategoryAdmin
           read_only true
         end
         field :name
+        field :slug
         field :description
         field :image
         field :posts
@@ -31,6 +32,7 @@ module RailsAdmin::CategoryAdmin
       show do
         field :id
         field :name
+        field :slug
         field :description
         field :image
         field :posts

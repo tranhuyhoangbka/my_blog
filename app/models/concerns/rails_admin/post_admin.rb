@@ -11,9 +11,21 @@ module RailsAdmin::PostAdmin
       end
 
       list do
+        COLUMN_NAMES = %i(post_type entry_id published_at link
+          image_url author short_content image)
         field :id
+        field :post_type do
+          pretty_value do
+            bindings[:object].post_type.nil? ? "normal" : bindings[:object].post_type
+          end
+        end
+        field :image do
+          pretty_value do
+            url = bindings[:object].image.present? ? bindings[:object].image : bindings[:object].image_url
+            bindings[:view].tag(:img, {:src => url, width: "130", height: "120"})
+          end
+        end
         field :title
-        field :image
         field :categories
         field :created_at do
           label "Created on"
@@ -38,6 +50,8 @@ module RailsAdmin::PostAdmin
       end
 
       show do
+        COLUMN_NAMES = %i(post_type entry_id published_at link
+          image_url author short_content image)
         field :created_at do
           strftime_format "Lúc %I:%M %p Ngày %d-%m-%Y"
           label "Create on"
@@ -49,7 +63,13 @@ module RailsAdmin::PostAdmin
             value.html_safe
           end
         end
-        field :image
+        COLUMN_NAMES.each do |column|
+          field column do
+            visible do
+              bindings[:object].send(column).present?
+            end
+          end
+        end
       end
     end
   end

@@ -1,9 +1,9 @@
-#require "rufus-scheduler"
+require "rufus-scheduler"
 
-# scheduler = Rufus::Scheduler::singleton
+scheduler = Rufus::Scheduler::singleton(:max_work_threads => 100)
 
-# # jobs go below here.
-# scheduler.every '3m' do
-#   # do stuff
-#   Post.create title: Faker::Book.title, content: Faker::Lorem.paragraph
-# end
+scheduler.every "8m" do
+  Settings.rss_urls.to_h.values.each do |url|
+    Post.create_daily_posts! url
+  end
+end

@@ -29,7 +29,7 @@ class Rss::ExtractGoogleEntry
     doc.css("div.lh a")[0]["href"]
   end
 
-  def image
+  def image_url
     doc.css("img")[0]["src"].gsub("//", "")
   end
 

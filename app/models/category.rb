@@ -20,4 +20,8 @@ class Category < ActiveRecord::Base
   # add a delete_<asset_name> method:
   attr_accessor :delete_image
   before_validation { self.image.clear if self.delete_image == '2' }
+
+  def in_country?
+    self.name == Settings.except_cate.in_country
+  end
 end

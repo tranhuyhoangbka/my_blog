@@ -33,9 +33,6 @@ RailsAdmin.config do |config|
       except ["Activity"]
     end
     delete
-    show_in_app do
-      except ["Activity"]
-    end
 
     ## With an audit adapter, you can add:
     # history_index
