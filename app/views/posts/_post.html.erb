@@ -1,7 +1,7 @@
 <%= div_for post do %>
   <%= content_tag :h3, link_to(post.title, category_post_path(@category, post), data: {no_turbolink: true}) if post.normal? %>
    <%= content_tag :h3, link_to(post.title, post.link, target: "_blank", data: {no_turbolink: true}) if post.daily? %>
-  <p><span><i class="glyphicon glyphicon-time"></i> <%= post.created_at.strftime "%I:%M %d/%m/%Y" %></span> <span><i class="glyphicon glyphicon-pencil"></i> <%= link_to "Trần Huy Hoàng", "#" %></span></p>
+  <p><span><i class="glyphicon glyphicon-time"></i> <%= (post.normal? ? post.created_at : post.published_at).in_time_zone(Settings.time_zone).strftime "%I:%M %p %d/%m/%Y" %></span> <span><i class="glyphicon glyphicon-pencil"></i> <%= link_to "Trần Huy Hoàng", "#" if post.normal? %><%= link_to post.author, "#" if post.daily? %></span></p>
   <div class="row">
     <div class="col-xs-16 col-md-4">
       <%= image_tag post.image.url(:thumb), class: "img-responsive" if post.normal? %>
@@ -9,7 +9,8 @@
     </div>
     <div class="col-xs-16 col-md-8">
       <%= sanitize truncate(post.content, :length => 200, escape: false, separator: " ") %>
-      <p><strong><%= link_to " Đọc tiếp", category_post_path(@category, post), class: "read-more", data: {no_turbolink: true} %></strong></p>
+      <p><%= sanitize post.short_content %><p>
+      <p><strong><%= link_to " Đọc tiếp", category_post_path(@category, post), class: "read-more", data: {no_turbolink: true} if post.normal? %><%= link_to " Đọc tiếp", post.link, class: "read-more", target: "_blank", data: {no_turbolink: true} if post.daily? %></strong></p>
       <ul class="list-unstyled info-post">
         <li>260 lượt xem</li>
         <li title="Thích"><i class="glyphicon glyphicon-thumbs-up"></i> 13</li>

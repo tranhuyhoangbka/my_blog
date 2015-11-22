@@ -21,7 +21,7 @@ module RailsAdmin::PostAdmin
         end
         field :image do
           pretty_value do
-            url = bindings[:object].image.present? ? bindings[:object].image : bindings[:object].image_url
+            url = bindings[:object].image.present? ? bindings[:object].image : "http://#{bindings[:object].image_url}"
             bindings[:view].tag(:img, {:src => url, width: "130", height: "120"})
           end
         end

@@ -34,7 +34,7 @@
 <div class="top-menu" style="margin-top: 0px;">
   <div class="container">
     <ul class="nav nav-tabs">
-      <li><a href="#"><i class="glyphicon glyphicon-home text-primary"></i></a></li>
+      <li><a href="<%= root_path %>"><i class="glyphicon glyphicon-home text-primary"></i></a></li>
       <% all_categories.each do |category| %>
         <% if category.in_country? %>
           <%= content_tag :li, link_to(Settings.except_cate.instead, category_path(category)) %>

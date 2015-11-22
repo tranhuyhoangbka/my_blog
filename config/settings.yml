@@ -8,3 +8,7 @@ rss_urls:
 except_cate:
   in_country: "Quốc gia"
   instead: "Trong nước"
+time_zone: "Asia/Ho_Chi_Minh"
+
+limit:
+  posts: 10

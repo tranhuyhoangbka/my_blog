@@ -6,8 +6,9 @@ class Post < Article
 
   POST_ATTR = %i(category entry_id published_at title link image_url author
     short_content)
+  OLD_TIME = 6.days.ago
 
-  paginates_per 10
+  paginates_per Settings.limit.posts
 
   enum post_type: [:normal, :daily]
 
@@ -19,7 +20,10 @@ class Post < Article
   #validates :image, attachment_presence: true
 
   attr_accessor :delete_image
+
   before_validation { self.image.clear if self.delete_image == '1' }
+
+  scope :old_posts, ->{where("published_at < ?", OLD_TIME)}
 
   class << self
     def create_daily_posts! url
