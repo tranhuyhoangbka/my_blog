@@ -5,31 +5,13 @@
     </div>
     <div class="content-box-side-bar">
       <ul class="list-posts list-unstyled">
-        <li class="post">
-          <h3><a href="#">Mưa buồn chiều cuối thu</a></h3>
-          <p><i class="glyphicon glyphicon-time"></i> 10:20 20/9/2015</p>
-          <p><i class="glyphicon glyphicon-pencil"></i> <a href="#">Trần Huy Hoàng</a></p>
+        <% @new_posts.each do |post| %>
+          <li class="post">
+          <h3><%= link_to post.title, post.link, target: "_blank" %></h3>
+          <p><i class="glyphicon glyphicon-time"></i> <%= post.published_at.in_time_zone(Settings.time_zone).strftime("%I:%M %p %d/%m/%Y") %></p>
+          <p><i class="glyphicon glyphicon-pencil"></i> <a href="#"><%= post.author %></a></p>
         </li>
-        <li class="post">
-          <h3><a href="#">Chuyến đi bão tố</a></h3>
-          <p><i class="glyphicon glyphicon-time"></i> 10:20 20/9/2015</p>
-          <p><i class="glyphicon glyphicon-pencil"></i> <a href="#">Trần Huy Hoàng</a></p>
-        </li>
-        <li class="post">
-          <h3><a href="#">Gió lướt giữa trời mưa</a></h3>
-          <p><i class="glyphicon glyphicon-time"></i> 10:20 20/9/2015</p>
-          <p><i class="glyphicon glyphicon-pencil"></i> <a href="#">Trần Huy Hoàng</a></p>
-        </li>
-        <li class="post">
-          <h3><a href="#">Nhớ mùa thu năm ấy</a></h3>
-          <p><i class="glyphicon glyphicon-time"></i> 10:20 20/9/2015</p>
-          <p><i class="glyphicon glyphicon-pencil"></i> <a href="#">Trần Huy Hoàng</a></p>
-        </li>
-        <li class="post">
-          <h3><a href="#">Cô gái của tôi</a></h3>
-          <p><i class="glyphicon glyphicon-time"></i> 10:20 20/9/2015</p>
-          <p><i class="glyphicon glyphicon-pencil"></i> <a href="#">Trần Huy Hoàng</a></p>
-        </li>
+        <% end %>
       </ul>
     </div>
   </div>
