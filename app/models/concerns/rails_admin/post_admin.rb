@@ -47,14 +47,6 @@ module RailsAdmin::PostAdmin
           thumb_method :thumb
         end
         field :categories
-        field :post_type, :enum do
-          enum_method do
-            :post_type_enum
-          end
-          default_value do
-            "normal"
-          end
-        end
       end
 
       show do

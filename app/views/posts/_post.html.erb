@@ -1,6 +1,7 @@
 <%= div_for post do %>
   <%= content_tag :h3, link_to(post.title, category_post_path(@category, post), data: {no_turbolink: true}) if post.normal? %>
    <%= content_tag :h3, link_to(post.title, post.link, target: "_blank", data: {no_turbolink: true}) if post.daily? %>
+   <% binding.pry %>
   <p><span><i class="glyphicon glyphicon-time"></i> <%= (post.normal? ? post.created_at : post.published_at).in_time_zone(Settings.time_zone).strftime "%I:%M %p %d/%m/%Y" %></span> <span><i class="glyphicon glyphicon-pencil"></i> <%= link_to "Trần Huy Hoàng", "#" if post.normal? %><%= link_to post.author, "#" if post.daily? %></span></p>
   <div class="row">
     <div class="col-xs-16 col-md-4">

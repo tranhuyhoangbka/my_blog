@@ -1,6 +1,8 @@
 class Post < Article
   include RailsAdmin::PostAdmin
 
+  before_save :set_post_type_default
+
   has_many :article_categories, dependent: :destroy
   has_many :categories, through: :article_categories
 
@@ -50,11 +52,11 @@ class Post < Article
     end
   end
 
-  def post_type_enum
-    # Do not select any value, or add any blank field. RailsAdmin will do it for you.
-    %w[normal daily]
-    # alternatively
-    # { green: 0, white: 1 }
-    # [ %w(Green 0), %w(White 1)]
+  private
+  def set_post_type_default
+    if published_at.nil? && post_type.nil?
+      self.post_type = "normal"
+      self.save
+    end
   end
 end
