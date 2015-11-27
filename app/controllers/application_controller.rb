@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
   end
 
   def new_posts
-    @new_posts ||= Post.order(published_at: :desc).limit 5
+    @new_posts ||= Post.order(created_at: :desc).limit 5
   end
 end
