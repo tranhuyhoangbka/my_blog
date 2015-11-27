@@ -14,10 +14,15 @@ class Post < Article
 
   enum post_type: [:normal, :daily]
 
-  has_attached_file :image, :styles => {
+  has_attached_file(:image,
+    :storage => :dropbox,
+    :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
+    :dropbox_visibility => 'private',
+    :path => "nice_images/:filename",
+    :styles => {
       :thumb => "140x140#",
-      :small  => "200x200#",
-      :medium => "300x300>" }
+      :small  => "300x300#",
+      :medium => "500x500>" })
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   #validates :image, attachment_presence: true
 

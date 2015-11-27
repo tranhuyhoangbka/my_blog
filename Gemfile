@@ -12,6 +12,9 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'rufus-scheduler', '~> 3.1', '>= 3.1.10'
 gem 'feedjira'
 gem "config"
+gem "paperclip-dropbox", ">= 1.1.7"
+gem "haml"
+gem "simple_form"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use mysql as the database for Active Record
