@@ -12,3 +12,4 @@ time_zone: "Asia/Ho_Chi_Minh"
 
 limit:
   posts: 10
+author_default: "Trần Huy Hoàng"

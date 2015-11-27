@@ -8,9 +8,9 @@
       <% if @new_posts.present? %>
         <% @new_posts.each do |post| %>
           <li class="post">
-          <h3><%= link_to post.title, post.link, target: "_blank" %></h3>
-          <p><i class="glyphicon glyphicon-time"></i> <%= post.published_at.in_time_zone(Settings.time_zone).strftime("%I:%M %p %d/%m/%Y")  if post.published_at.present? %></p>
-          <p><i class="glyphicon glyphicon-pencil"></i> <a href="#"><%= post.try :author %></a></p>
+          <h3><%= link_to post.title, post.link, target: "_blank" if post.daily? %><%= link_to post.title, category_post_path(post.categories.first, post) if post.normal? %></h3>
+          <p><i class="glyphicon glyphicon-time"></i> <%= post.daily? ? post.published_at.in_time_zone(Settings.time_zone).strftime("%I:%M %p %d/%m/%Y") : post.created_at.in_time_zone(Settings.time_zone).strftime("%I:%M %p %d/%m/%Y") %></p>
+          <p><i class="glyphicon glyphicon-pencil"></i> <a href="#"><%= post.daily? ? post.author : Settings.author_default %></a></p>
         </li>
         <% end %>
       <% end %>
