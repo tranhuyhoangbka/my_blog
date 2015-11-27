@@ -49,4 +49,12 @@ class Post < Article
       Category.find_by_name(post_data.category).posts << Post.create(hash_t(post_data))
     end
   end
+
+  def post_type_enum
+    # Do not select any value, or add any blank field. RailsAdmin will do it for you.
+    %w[normal daily]
+    # alternatively
+    # { green: 0, white: 1 }
+    # [ %w(Green 0), %w(White 1)]
+  end
 end
