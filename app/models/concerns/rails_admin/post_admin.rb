@@ -47,6 +47,11 @@ module RailsAdmin::PostAdmin
           thumb_method :thumb
         end
         field :categories
+        field :post_type, :hidden do
+          default_value do
+            "normal"
+          end
+        end
       end
 
       show do
