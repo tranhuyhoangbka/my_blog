@@ -18,7 +18,7 @@ class Post < Article
     :storage => :dropbox,
     :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
     :dropbox_visibility => 'private',
-    :path => "nice_images/:filename",
+    :path => "nice_images/:class/:attachment/:id_partition/:style/:filename",
     :styles => {
       :thumb => "140x140#",
       :small  => "300x300#",
