@@ -3,11 +3,7 @@ class Ckeditor::AttachmentFile < Ckeditor::Asset
                     :storage => :dropbox,
                     :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
                     :dropbox_visibility => 'private',
-                    :path => "myblog/inline_article_images/:class/:attachment/:id_partition/:style/:filename",
-                    :styles => {
-                      :thumb => "140x140#",
-                      :small  => "300x300#",
-                      :medium => "500x500>" }
+                    :path => "myblog/inline_article_images/:class/:attachment/:id_partition/:style/:filename"
 
   validates_attachment_presence :data
   validates_attachment_size :data, :less_than => 100.megabytes

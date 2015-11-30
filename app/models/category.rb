@@ -12,10 +12,14 @@ class Category < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   has_attached_file :image,
-    :styles => {
-      :thumb => "100x100#",
-      :small  => "150x150>",
-      :medium => "200x200" }
+                    :storage => :dropbox,
+                    :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
+                    :dropbox_visibility => 'private',
+                    :path => "myblog/nice_images/:class/:attachment/:id_partition/:style/:filename",
+                    :styles => {
+                      :thumb => "140x140#",
+                      :small  => "300x300#",
+                      :medium => "500x500>" }
   validates :image, attachment_presence: true
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   # add a delete_<asset_name> method:
