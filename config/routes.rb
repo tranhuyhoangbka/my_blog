@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :posts
   resources :videos
   resources :photos
-  resources :comments
   resources :categories do
     resources :posts
   end
