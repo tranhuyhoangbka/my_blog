@@ -20,7 +20,7 @@ class Category < ActiveRecord::Base
                       :thumb => "140x140#",
                       :small  => "300x300#",
                       :medium => "500x500>" }
-  validates :image, attachment_presence: true
+  #validates :image, attachment_presence: true
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   # add a delete_<asset_name> method:
   attr_accessor :delete_image
