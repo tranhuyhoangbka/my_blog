@@ -18,13 +18,12 @@ class Post < Article
     :storage => :dropbox,
     :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
     :dropbox_visibility => 'private',
-    :path => "nice_images/:class/:attachment/:id_partition/:style/:filename",
+    :path => "myblog/nice_images/:class/:attachment/:id_partition/:style/:filename",
     :styles => {
       :thumb => "140x140#",
       :small  => "300x300#",
       :medium => "500x500>" })
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-  #validates :image, attachment_presence: true
 
   attr_accessor :delete_image
 
